@@ -1,0 +1,22 @@
+name: vars test
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+    branches:
+      - main
+    paths:
+      - .github/workflows/vars.yaml
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/vars.yaml
+jobs:
+  find-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo '${{ JSON.stringify(github) }}'
+
