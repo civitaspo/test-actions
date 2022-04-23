@@ -16,7 +16,7 @@ on:
       - .github/workflows/vars.yaml
 
 jobs:
-  find-pr:
+  v:
     runs-on: ubuntu-latest
     steps:
       - run: echo '${{ JSON.stringify(github) }}'
