@@ -8,6 +8,7 @@ on:
       - .github/workflows/find-pr.yaml
 jobs:
   find-pr:
+    runs-on: ubuntu-latest
     steps:
       - name: Find Pull Request
         uses: juliangruber/find-pull-request-action@v1
