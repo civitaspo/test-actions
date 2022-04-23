@@ -1,0 +1,20 @@
+name: find-pr test
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/find-pr.yaml
+jobs:
+  find-pr:
+    steps:
+      - name: Find Pull Request
+        uses: juliangruber/find-pull-request-action@v1
+        id: find-pull-request
+        with:
+          branch: main
+      - run: echo "Pull Request ${number} (${sha})"
+        env:
+          number: ${{ steps.find-pull-request.outputs.number }}
+          sha: ${{ steps.find-pull-request.outputs.head-sha }}
