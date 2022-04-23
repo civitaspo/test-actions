@@ -15,6 +15,7 @@ jobs:
         id: find-pull-request
         with:
           branch: main
+
       - run: echo "Pull Request ${number} (${sha})"
         env:
           number: ${{ steps.find-pull-request.outputs.number }}
