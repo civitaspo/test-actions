@@ -11,13 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Find Pull Request
-        uses: juliangruber/find-pull-request-action@v1
+        uses: jwalton/gh-find-current-pr@v1
         id: find-pull-request
         with:
-          branch: main
+          state: all
 
-      - run: echo "Pull Request ${number} (${sha})"
+      - run: echo "Pull Request ${number}"
         env:
           number: ${{ steps.find-pull-request.outputs.number }}
-          sha: ${{ steps.find-pull-request.outputs.head-sha }}
 
