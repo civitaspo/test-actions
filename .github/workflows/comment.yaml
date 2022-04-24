@@ -1,4 +1,4 @@
-name: vars test
+name: comment test
 
 on:
   workflow_dispatch:
