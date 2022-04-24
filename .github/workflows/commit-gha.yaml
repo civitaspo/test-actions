@@ -26,5 +26,5 @@ jobs:
           git config user.email github-actions@github.com
           git add .github/workflows/random.txt
           git commit -m 'random.txt'
-          git push
+          git push origin HEAD:random
 
