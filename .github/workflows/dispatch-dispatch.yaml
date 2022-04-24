@@ -1,0 +1,24 @@
+name: dispatch dispatch test
+
+on:
+  workflow_dispatch:
+  pull_reques Vt:
+    types:
+      - opened
+      - synchronize
+    branches:
+      - main
+    paths:
+      - .github/workflows/dispatch-dispatch.yaml
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/dispatch-dispatch.yaml
+
+jobs:
+  v:
+    runs-on: ubuntu-latest
+    steps:
+      - run: gh workflow run comment.yml
+
