@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: gh workflow run comment.yaml -r ${{ sha }}
+      - run: gh workflow run comment.yaml -r ${{ github.sha }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: gh run list --workflow=comment.yaml
