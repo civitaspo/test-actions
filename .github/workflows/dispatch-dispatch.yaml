@@ -21,4 +21,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: gh workflow run comment.yml
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
