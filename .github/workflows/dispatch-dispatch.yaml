@@ -2,7 +2,7 @@ name: dispatch dispatch test
 
 on:
   workflow_dispatch:
-  pull_reques:
+  pull_request:
     types:
       - opened
       - synchronize
