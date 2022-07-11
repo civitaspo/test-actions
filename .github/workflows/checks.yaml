@@ -1,0 +1,13 @@
+name: checks test
+
+on:
+  check_run:
+    types: [rerequested, completed]
+jobs:
+  v:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo '${{ toJSON(github) }}'
+      - run: env
+
+
