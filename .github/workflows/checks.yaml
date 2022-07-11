@@ -1,11 +1,13 @@
-name: pr test
+name: checks test
 
 on:
-  pull_request:
-    branches:
-      - main
+  check_run:
+    types: [rerequested, completed]
 jobs:
-  find-pr:
+  v:
     runs-on: ubuntu-latest
     steps:
       - run: echo '${{ toJSON(github) }}'
+      - run: env
+
+
