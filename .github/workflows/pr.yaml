@@ -1,0 +1,11 @@
+name: find-pr test
+
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  find-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo '${{ toJSON(github) }}'
