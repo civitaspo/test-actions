@@ -1,0 +1,12 @@
+name: status test
+
+on:
+  status
+jobs:
+  v:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo '${{ toJSON(github) }}'
+      - run: env
+
+
