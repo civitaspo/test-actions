@@ -1,0 +1,14 @@
+name: workflow_run test
+
+on:
+  workflow_run:
+    workflows: ["pr test", "**"]
+    types: [completed]
+jobs:
+  v:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo '${{ toJSON(github) }}'
+      - run: env
+
+
