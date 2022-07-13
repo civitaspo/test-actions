@@ -1,0 +1,22 @@
+name: "(automation/merge-pr) Merge PRs having automerge label"
+
+on:
+  pull_request:
+    types:
+      - labeled
+  pull_request_review:
+    types:
+      - submitted
+  workflow_run:
+    types:
+      - completed
+    workflows:
+      - "comment test"
+
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo '${{ toJSON(github) }}'
+      - run: env
