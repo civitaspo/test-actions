@@ -6,6 +6,7 @@ on:
       - main
 jobs:
   find-pr:
+    environment: dynamic-env
     runs-on: ubuntu-latest
     steps:
       - run: echo '${{ toJSON(github) }}'
