@@ -1,0 +1,11 @@
+name: pr test
+
+on:
+  release:
+    types:
+      - published
+jobs:
+  show:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo '${{ toJSON(github) }}'
