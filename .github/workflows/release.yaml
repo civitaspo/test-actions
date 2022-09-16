@@ -1,12 +1,11 @@
 name: pr test
 
 on:
-  pull_request:
-    branches:
-      - main
+  release:
+    types:
+      - published
 jobs:
-  find-pr:
-    environment: dynamic-env
+  show:
     runs-on: ubuntu-latest
     steps:
       - run: echo '${{ toJSON(github) }}'
