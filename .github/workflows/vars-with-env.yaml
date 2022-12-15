@@ -1,0 +1,27 @@
+name: vars with env test
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+    branches:
+      - main
+    paths:
+      - .github/workflows/vars.yaml
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/vars.yaml
+
+jobs:
+  v:
+    environment:
+      name: test-env
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo '${{ toJSON(github) }}'
+      - run: env
+      - run: cat '${{ github.event_path }}'
+
