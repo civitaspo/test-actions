@@ -21,4 +21,5 @@ jobs:
     steps:
       - run: echo '${{ toJSON(github) }}'
       - run: env
+      - run: cat '${{ github.event_path }}'
 
