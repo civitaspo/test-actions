@@ -8,12 +8,12 @@ on:
     branches:
       - main
     paths:
-      - .github/workflows/vars.yaml
+      - .github/workflows/vars-with-env.yaml
   push:
     branches:
       - main
     paths:
-      - .github/workflows/vars.yaml
+      - .github/workflows/vars-with-env.yaml
 
 jobs:
   v:
