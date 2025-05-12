@@ -1,0 +1,13 @@
+name: label
+
+on:
+  label:
+    types:
+      - created
+      - deleted
+jobs:
+  find-pr:
+    environment: dynamic-env
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo '${{ toJSON(github) }}'
